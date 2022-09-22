@@ -20,7 +20,7 @@ printf("%02x", c[l * 10 + j]);
 else
 printf("  ");
 if (j % 2)
-putchar(' ')
+putchar(' ');
 }
 for (k = 0; k <= s; k++)
 {
