@@ -1,22 +1,25 @@
 #include "main.h"
 
 /**
- * _strchr - locates a character in a string
+ * _strspn - gets lengthof a prefix substring
  * @s: string to check
- * @c: character to check for
+ * @accept: string to check against
  *
- * Return: pointer to spot in s with c or null
+ * Return: number of bytes of s in accept
  */
 
-char *_strchr(char *s, char c)
+unsigned int _strspn(char *s, char *accept)
 {
-int i;
-for (i = 0; *(s + i); i++)
+unsigned int i, j;
+for (i = 0; s[i]; i++)
 {
-if (*(s + i) == c)
-return (s + i);
+for (j = 0; accept[j]; j++)
+{
+if (s[i] == accept[j])
+break;
 }
-if (*(s + i) == c)
-return (s + i);
-return (0);
+if (!accept[j])
+break;
+}
+return (i);
 }
